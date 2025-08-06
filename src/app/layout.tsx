@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Roboto } from 'next/font/google'
+import Header from '@/components/Layout/Header'
 import './globals.css'
 
 const geistSans = Geist({
@@ -27,9 +28,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const menuItems = [
+    {
+      name: 'About',
+      href: '/about',
+      children: [],
+    },
+    {
+      name: 'Contact',
+      href: '/contact',
+      children: [
+        { name: 'Tech', href: '/contact/tech' },
+        { name: 'Sports', href: '/contact/sports' },
+        { name: 'Entertainment', href: '/contact/entertainment' },
+      ],
+    },
+    {
+      name: 'Bang',
+      href: '/bang',
+      children: [],
+    },
+  ]
+
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${geistRoboto.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${geistRoboto.variable} antialiased`}>
+        <Header menuItems={menuItems} />
+        <main>{children}</main>
+      </body>
     </html>
   )
 }

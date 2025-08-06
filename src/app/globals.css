@@ -25,3 +25,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.dev-blue {
+  outline: 1px solid blue;
+}
+
+.dev-red {
+  outline: 1px solid red;
+}
+
+.dev-white {
+  outline: 1px solid white;
+}

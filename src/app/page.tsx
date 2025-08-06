@@ -6,7 +6,6 @@ export default function Home() {
       <main className="row-start-2 flex flex-col items-center gap-[32px] sm:items-start">
         <Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={180} height={38} priority />
       </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-[24px]"></footer>
     </div>
   )
 }
