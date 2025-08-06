@@ -18,9 +18,13 @@ export default function Header({ menuItems }: HeaderProps) {
         <ul className="flex h-full gap-5">
           {menuItems.map((item) => (
             <li className="group relative flex h-full items-center" key={item.name}>
-              <Link className="text-gray-300 duration-300 hover:text-white" href={item.href}>
-                {item.name}
-              </Link>
+              {item.children.length === 0 ? (
+                <Link className="text-gray-300 duration-300 hover:text-white" href={item.href}>
+                  {item.name}
+                </Link>
+              ) : (
+                <div className="cursor-pointer text-gray-300 hover:text-white">{item.name}</div>
+              )}
               {item.children.length > 0 && (
                 <ul className="dev-white pointer-events-none absolute top-full flex flex-col overflow-hidden rounded-md bg-black opacity-0 duration-300 group-hover:pointer-events-auto group-hover:opacity-100">
                   {item.children.map((child) => (
