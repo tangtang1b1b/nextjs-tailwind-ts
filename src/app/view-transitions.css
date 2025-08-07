@@ -1,0 +1,37 @@
+/* View Transitions CSS - 只針對 main 區域 */
+::view-transition-old(main),
+::view-transition-new(main) {
+  animation: none;
+}
+
+/* 滑動效果 - 只影響 main 內容 */
+::view-transition-old(main) {
+  animation: slide-out 0.5s forwards;
+}
+
+::view-transition-new(main) {
+  animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 確保動畫期間保持層級 */
+::view-transition-group(root) {
+  animation-duration: 0.5s;
+}
