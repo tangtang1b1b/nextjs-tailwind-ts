@@ -38,7 +38,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${geistRoboto.variable} antialiased`}>
         <Header menuItems={menuItems} />
-        <div className="flex min-h-[calc(100vh-160px)] flex-col items-center justify-center gap-10">
+        <div className="min-h-[calc(100vh-160px)]">
           <MotionMain>{children}</MotionMain>
         </div>
         <Footer />
