@@ -26,10 +26,13 @@ export default function Header({ menuItems }: HeaderProps) {
                 <div className="cursor-pointer text-gray-300 hover:text-white">{item.name}</div>
               )}
               {item.children.length > 0 && (
-                <ul className="dev-white pointer-events-none absolute top-full left-1/2 -translate-x-1/2 flex flex-col items-center overflow-hidden rounded-md bg-black opacity-0 duration-300 group-hover:pointer-events-auto group-hover:opacity-100">
+                <ul className="pointer-events-none absolute top-full left-1/2 flex -translate-x-1/2 flex-col items-center overflow-hidden rounded-md border bg-black opacity-0 duration-300 group-hover:pointer-events-auto group-hover:opacity-100">
                   {item.children.map((child) => (
-                    <li className="group/children w-full text-center px-2 duration-300 hover:bg-white" key={child.name}>
-                      <Link className="block h-full py-2 text-gray-300 duration-300 group-hover/children:text-black" href={child.href}>
+                    <li className="group/children w-full px-2 text-center duration-300 hover:bg-white" key={child.name}>
+                      <Link
+                        className="block h-full py-2 break-keep text-gray-300 duration-300 group-hover/children:text-black"
+                        href={child.href}
+                      >
                         {child.name}
                       </Link>
                     </li>

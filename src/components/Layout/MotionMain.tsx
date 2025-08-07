@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 
-export default function MotionMain({ children }: { children: React.ReactNode }) {  
+export default function MotionMain({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const prevPath = useRef(pathname)
   const [displayLocation, setDisplayLocation] = useState(pathname)

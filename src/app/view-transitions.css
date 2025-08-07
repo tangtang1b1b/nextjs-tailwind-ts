@@ -1,37 +1,44 @@
-/* View Transitions CSS - 只針對 main 區域 */
+/* View Transitions CSS - 只針對 main 區域，純淡入淡出 */
 ::view-transition-old(main),
 ::view-transition-new(main) {
   animation: none;
+  /* 禁用預設的 transform 和 scale 動畫 */
+  transform: none !important;
+  transform-origin: center !important;
 }
 
-/* 滑動效果 - 只影響 main 內容 */
+::view-transition-group(main) {
+  /* 禁用預設的縮放動畫 */
+  animation: none !important;
+}
+
+/* 純淡入淡出效果 - 只影響 main 內容 */
 ::view-transition-old(main) {
-  animation: slide-out 0.5s forwards;
+  animation: fade-out 0.3s ease-out forwards;
 }
 
 ::view-transition-new(main) {
-  animation: slide-in 0.5s forwards;
+  animation: fade-in 0.3s ease-in forwards;
 }
 
-@keyframes slide-out {
+@keyframes fade-out {
   from {
     opacity: 1;
+    transform: none;
   }
   to {
     opacity: 0;
+    transform: none;
   }
 }
 
-@keyframes slide-in {
+@keyframes fade-in {
   from {
     opacity: 0;
+    transform: none;
   }
   to {
     opacity: 1;
+    transform: none;
   }
-}
-
-/* 確保動畫期間保持層級 */
-::view-transition-group(root) {
-  animation-duration: 0.5s;
 }

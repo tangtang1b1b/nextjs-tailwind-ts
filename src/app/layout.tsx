@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Roboto } from 'next/font/google'
 import Header from '@/components/Layout/Header'
+import Footer from '@/components/Layout/Footer'
 import MotionMain from '@/components/Layout/MotionMain'
 import './globals.css'
 
@@ -29,11 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     {
       name: 'Demo',
       href: '/demo',
-      children: [
-        { name: 'Tech', href: '/demo/tech' },
-        { name: 'Sports', href: '/demo/sports' },
-        { name: 'Entertainment', href: '/demo/entertainment' },
-      ],
+      children: [{ name: '森朗醫學診所', href: '/demo/sunclinic' }],
     },
   ]
 
@@ -41,7 +38,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${geistRoboto.variable} antialiased`}>
         <Header menuItems={menuItems} />
-        <MotionMain>{children}</MotionMain>
+        <div className="flex min-h-[calc(100vh-160px)] flex-col items-center justify-center gap-10">
+          <MotionMain>{children}</MotionMain>
+        </div>
+        <Footer />
       </body>
     </html>
   )
