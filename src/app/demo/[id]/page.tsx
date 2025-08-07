@@ -1,14 +1,16 @@
 interface DemoPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-export default function DemoPage({ params }: DemoPageProps) {
+export default async function DemoPage({ params }: DemoPageProps) {
+  const { id } = await params
+
   return (
-    <div>
+    <section className="mx-auto w-full max-w-[1280px] px-5">
       <h1>Demo Page</h1>
-      <p>Demo ID: {params.id}</p>
-    </div>
+      <p>Demo ID: {id}</p>
+    </section>
   )
 }
