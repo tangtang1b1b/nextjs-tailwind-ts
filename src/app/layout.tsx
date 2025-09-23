@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const menuItems = [
     {
-      name: 'Demo',
+      name: 'DEMO',
       href: '/demo',
       children: [{ name: '森朗醫學診所', href: '/demo/sunclinic' }],
     },
@@ -36,9 +36,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${geistRoboto.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${geistRoboto.variable} font-mono antialiased`}>
         <Header menuItems={menuItems} />
-        <div className="min-h-[calc(100vh-160px)]">
+        <div className="mx-auto h-screen max-h-[calc(100vh-160px)] max-w-screen-2xl px-5">
           <MotionMain>{children}</MotionMain>
         </div>
         <Footer />

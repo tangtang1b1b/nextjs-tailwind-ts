@@ -9,7 +9,7 @@ export default function MotionMain({ children }: { children: React.ReactNode }) 
 
   useEffect(() => {
     if (prevPath.current !== pathname) {
-      console.log('Route changed from:', prevPath.current, 'to:', pathname)
+      // console.log('Route changed from:', prevPath.current, 'to:', pathname)
 
       if (typeof document !== 'undefined' && document.startViewTransition) {
         const transition = document.startViewTransition(() => {
@@ -32,7 +32,7 @@ export default function MotionMain({ children }: { children: React.ReactNode }) 
   const shouldShowCurrentChildren = displayLocation === pathname
 
   return (
-    <main style={{ viewTransitionName: 'main' }}>
+    <main className='size-full' style={{ viewTransitionName: 'main' }}>
       {shouldShowCurrentChildren ? children : null}
     </main>
   )
