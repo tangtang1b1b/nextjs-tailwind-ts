@@ -9,9 +9,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-roboto: var(--font-roboto);
+  --font-coiny: var(--font-coiny);
   --breakpoint-2xl: 1440px;
   --breakpoint-xl: 1280px;
 }

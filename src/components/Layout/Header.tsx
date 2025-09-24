@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '@/components/Modal/Button'
@@ -13,7 +14,23 @@ export default function Header({ menuItems }: HeaderProps) {
     <header className="relative z-[2000] mx-auto flex h-20 max-w-screen-2xl items-center justify-between px-5">
       <nav className="flex size-full items-center justify-between">
         <Link href="/">
-          <Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={100} height={45} priority />
+          <p
+            className="cursor-pointer text-5xl font-bold duration-300 font-coiny"
+            style={{
+              color: 'transparent',
+              WebkitTextStroke: '1px var(--foreground)',
+            }}
+            onMouseEnter={(e) => {
+              ;(e.currentTarget.style as any).color = 'var(--foreground)'
+              ;(e.currentTarget.style as any).webkitTextStroke = '1px var(--foreground)'
+            }}
+            onMouseLeave={(e) => {
+              ;(e.currentTarget.style as any).color = 'transparent'
+              ;(e.currentTarget.style as any).webkitTextStroke = '1px var(--foreground)'
+            }}
+          >
+            NTEMP
+          </p>
         </Link>
         <div className="flex gap-2">
           {/* <ul className="flex h-full gap-5">
@@ -43,12 +60,10 @@ export default function Header({ menuItems }: HeaderProps) {
               </li>
             ))}
           </ul> */}
-          <div className="cursor-pointer text-gray-300 duration-300">
-            {<Button text={menuItems[0].name} />}
-          </div>
+          <div className="cursor-pointer text-foreground duration-300">{<Button text={menuItems[0].name} />}</div>
           <div className="flex cursor-pointer flex-col justify-center gap-2 rounded-full border-2 px-5 py-2 duration-300 hover:gap-1">
-            <div className="h-0.5 w-5 bg-white"></div>
-            <div className="h-0.5 w-5 bg-white"></div>
+            <div className="h-0.5 w-5 bg-foreground"></div>
+            <div className="h-0.5 w-5 bg-foreground"></div>
           </div>
         </div>
       </nav>
