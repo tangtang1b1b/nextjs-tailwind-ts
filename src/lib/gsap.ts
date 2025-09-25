@@ -13,41 +13,44 @@ if (typeof window !== 'undefined') {
   })
 
   // 自訂動畫函數
+  type AnimationTarget = gsap.TweenTarget
+  type AnimationConfig = { duration?: number; delay?: number }
+  
   const animations = {
-    fadeUp: (target: any, config: any) => {
+    fadeUp: (target: AnimationTarget, config: AnimationConfig) => {
       return gsap.fromTo(target, { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: config.duration || 1, delay: config.delay || 0 })
     },
-    fadeDown: (target: any, config: any) => {
+    fadeDown: (target: AnimationTarget, config: AnimationConfig) => {
       return gsap.fromTo(target, { opacity: 0, y: -100 }, { opacity: 1, y: 0, duration: config.duration || 1, delay: config.delay || 0 })
     },
-    fadeLeft: (target: any, config: any) => {
+    fadeLeft: (target: AnimationTarget, config: AnimationConfig) => {
       return gsap.fromTo(target, { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: config.duration || 1, delay: config.delay || 0 })
     },
-    fadeRight: (target: any, config: any) => {
+    fadeRight: (target: AnimationTarget, config: AnimationConfig) => {
       return gsap.fromTo(target, { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: config.duration || 1, delay: config.delay || 0 })
     },
-    zoomIn: (target: any, config: any) => {
+    zoomIn: (target: AnimationTarget, config: AnimationConfig) => {
       return gsap.fromTo(
         target,
         { opacity: 0, scale: 0.3 },
         { opacity: 1, scale: 1, duration: config.duration || 1, delay: config.delay || 0 },
       )
     },
-    zoomOut: (target: any, config: any) => {
+    zoomOut: (target: AnimationTarget, config: AnimationConfig) => {
       return gsap.fromTo(
         target,
         { opacity: 0, scale: 1.5 },
         { opacity: 1, scale: 1, duration: config.duration || 1, delay: config.delay || 0 },
       )
     },
-    flipX: (target: any, config: any) => {
+    flipX: (target: AnimationTarget, config: AnimationConfig) => {
       return gsap.fromTo(
         target,
         { opacity: 0, rotationX: -90 },
         { opacity: 1, rotationX: 0, duration: config.duration || 1, delay: config.delay || 0 },
       )
     },
-    slideUp: (target: any, config: any) => {
+    slideUp: (target: AnimationTarget, config: AnimationConfig) => {
       return gsap.fromTo(target, { y: 100 }, { y: 0, duration: config.duration || 1, delay: config.delay || 0 })
     },
   }
@@ -92,7 +95,7 @@ if (typeof window !== 'undefined') {
   }
 
   // 導出初始化函數，供手動調用
-  ;(window as any).initGSAP = initGSAP
+  ;(window as unknown as Record<string, unknown>).initGSAP = initGSAP
 }
 
 export { gsap }
