@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 
-export default function Fab() {
+export default function Cursor() {
   const [isMouseInWindow, setIsMouseInWindow] = useState(true)
   const fabRef = useRef<HTMLDivElement>(null)
 

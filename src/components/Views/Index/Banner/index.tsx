@@ -1,5 +1,8 @@
+'use client'
 import Button from '@/components/Modal/Button'
 import Deco from '@/components/Views/Index/Banner/deco'
+import '@/lib/gsap'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Banner() {
   return (

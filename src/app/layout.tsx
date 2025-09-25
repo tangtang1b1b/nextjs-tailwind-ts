@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Geist_Mono, Coiny } from 'next/font/google'
 import Header from '@/components/Layout/Header'
 import Footer from '@/components/Layout/Footer'
-import Fab from '@/components/Layout/Fab'
+import Cursor from '@/components/Layout/Cursor'
 import MotionMain from '@/components/Layout/MotionMain'
 import '@/lib/gsap'
 import './globals.css'
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${geistCoiny.variable} ${geistMono.variable} antialiased`}>
-        <Fab />
+        <Cursor />
         <Header menuItems={menuItems} />
         <div className="mx-auto h-screen max-h-[calc(100vh-160px)] max-w-screen-2xl px-5">
           <MotionMain>{children}</MotionMain>
