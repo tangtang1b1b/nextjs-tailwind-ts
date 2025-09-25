@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 
 export default function Cursor() {
-  const [isMouseInWindow, setIsMouseInWindow] = useState(true)
+  const [isMouseInWindow, setIsMouseInWindow] = useState(false)
   const fabRef = useRef<HTMLDivElement>(null)
 
   const handleMouseDown = () => {
@@ -17,31 +17,31 @@ export default function Cursor() {
     }
   }
 
+  const handleMouseMove = (e: MouseEvent) => {
+    if (fabRef.current) {
+      fabRef.current.style.left = `${e.clientX - 20}px`
+      fabRef.current.style.top = `${e.clientY - 20}px`
+    }
+    setIsMouseInWindow(true)
+  }
+
+  const handleGlobalMouseDown = () => {
+    handleMouseDown()
+  }
+
+  const handleGlobalMouseUp = () => {
+    handleMouseUp()
+  }
+
+  const handleMouseLeave = () => {
+    setIsMouseInWindow(false)
+  }
+
+  const handleMouseEnter = () => {
+    setIsMouseInWindow(true)
+  }
+
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (fabRef.current) {
-        fabRef.current.style.left = `${e.clientX - 20}px`
-        fabRef.current.style.top = `${e.clientY - 20}px`
-      }
-      setIsMouseInWindow(true)
-    }
-
-    const handleGlobalMouseDown = () => {
-      handleMouseDown()
-    }
-
-    const handleGlobalMouseUp = () => {
-      handleMouseUp()
-    }
-
-    const handleMouseLeave = () => {
-      setIsMouseInWindow(false)
-    }
-
-    const handleMouseEnter = () => {
-      setIsMouseInWindow(true)
-    }
-
     window.addEventListener('mousemove', handleMouseMove)
     window.addEventListener('mousedown', handleGlobalMouseDown)
     window.addEventListener('mouseup', handleGlobalMouseUp)

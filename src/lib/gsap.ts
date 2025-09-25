@@ -15,7 +15,7 @@ if (typeof window !== 'undefined') {
   // 自訂動畫函數
   type AnimationTarget = gsap.TweenTarget
   type AnimationConfig = { duration?: number; delay?: number }
-  
+
   const animations = {
     fadeUp: (target: AnimationTarget, config: AnimationConfig) => {
       return gsap.fromTo(target, { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: config.duration || 1, delay: config.delay || 0 })
