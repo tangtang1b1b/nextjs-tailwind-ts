@@ -10,13 +10,15 @@ interface HeaderProps {
 }
 export default function Header({ menuItems }: HeaderProps) {
   const handleMouseEnter = (e: React.MouseEvent<HTMLParagraphElement>) => {
-    ;(e.currentTarget.style as any).color = 'var(--foreground)'
-    ;(e.currentTarget.style as any).webkitTextStroke = '1px var(--foreground)'
+    const style = e.currentTarget.style as CSSStyleDeclaration
+    style.color = 'var(--foreground)'
+    style.webkitTextStroke = '1px var(--foreground)'
   }
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLParagraphElement>) => {
-    ;(e.currentTarget.style as any).color = 'transparent'
-    ;(e.currentTarget.style as any).webkitTextStroke = '1px var(--foreground)'
+    const style = e.currentTarget.style as CSSStyleDeclaration
+    style.color = 'transparent'
+    style.webkitTextStroke = '1px var(--foreground)'
   }
 
   return (

@@ -2,7 +2,6 @@
 import Button from '@/components/Modal/Button'
 import Deco from '@/components/Views/Index/Banner/deco'
 import '@/lib/gsap'
-import { useState, useEffect, useRef } from 'react'
 
 export default function Banner() {
   return (
@@ -12,7 +11,7 @@ export default function Banner() {
           The Template Built For <span className="under text-9xl underline">Next</span>
         </h1>
         <p data-fade="fadeRight" data-delay="0.1" className="w-1/3 text-2xl">
-          The AI-focused design company for fast-moving teams building what's next.
+          The AI-focused design company for fast-moving teams building what&apos;s next.
         </p>
         <div data-fade="fadeRight" data-delay="0.2" className="w-fit">
           <Button className="text-2xl" text="Get Started" />

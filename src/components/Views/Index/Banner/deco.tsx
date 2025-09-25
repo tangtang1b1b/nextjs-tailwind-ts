@@ -144,7 +144,7 @@ export default function Deco() {
     Matter.World.add(world, cursor)
 
     // 滑鼠移動事件處理
-    let mousePosition = { x: 0, y: 0 }
+    const mousePosition = { x: 0, y: 0 }
     const handleMouseMove = (event: MouseEvent) => {
       const rect = containerRef.current?.getBoundingClientRect()
       if (rect) {
@@ -224,9 +224,10 @@ export default function Deco() {
 
     // 清理函數
     return () => {
-      // 移除滑鼠事件監聽器
-      if (containerRef.current) {
-        containerRef.current.removeEventListener('mousemove', handleMouseMove)
+      // 複製 ref 值到變數中，避免 cleanup 時 ref 已改變
+      const container = containerRef.current
+      if (container) {
+        container.removeEventListener('mousemove', handleMouseMove)
       }
 
       if (renderRef.current) {
