@@ -122,8 +122,8 @@ export default function Deco() {
     ]
 
     const rock = Matter.Bodies.fromVertices(
-      containerWidth * 0.7, // 移除偏移，直接使用中心位置
-      containerHeight * 0.3,
+      containerWidth * 0.9, // 移除偏移，直接使用中心位置
+      containerHeight * 0.7,
       [vertices],
       {
         restitution: 0.5,

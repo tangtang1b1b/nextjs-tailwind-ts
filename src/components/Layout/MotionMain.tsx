@@ -32,7 +32,7 @@ export default function MotionMain({ children }: { children: React.ReactNode }) 
   const shouldShowCurrentChildren = displayLocation === pathname
 
   return (
-    <main className="size-full" style={{ viewTransitionName: 'main' }}>
+    <main className="size-full flex flex-col gap-15" style={{ viewTransitionName: 'main' }}>
       {shouldShowCurrentChildren ? children : null}
     </main>
   )
