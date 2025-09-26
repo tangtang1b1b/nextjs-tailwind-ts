@@ -11,12 +11,23 @@ export default function Deco() {
   const [containerSize, setContainerSize] = useState({ width: 600, height: 400 })
 
   const init = () => {
-    gsap.to(rockRef.current, {
-      opacity: 1,
-      duration: 0.5,
-      delay: 0.5,
-      ease: 'power2.inOut',
-    })
+    if (!rockRef.current) return
+    gsap.fromTo(
+      rockRef.current,
+      {
+        opacity: 0,
+        x: -8,
+        y: -16,
+      },
+      {
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.5,
+        x: -8,
+        y: -16,
+        ease: 'power2.inOut',
+      },
+    )
   }
 
   useEffect(() => {
@@ -111,8 +122,8 @@ export default function Deco() {
     ]
 
     const rock = Matter.Bodies.fromVertices(
-      containerWidth * 0.7, // 移除偏移，直接使用中心位置
-      containerHeight * 0.3,
+      containerWidth * 0.9, // 移除偏移，直接使用中心位置
+      containerHeight * 0.7,
       [vertices],
       {
         restitution: 0.5,
@@ -248,10 +259,9 @@ export default function Deco() {
       <div ref={containerRef} className="absolute size-full" />
       <div
         ref={rockRef}
-        className="bg-foreground absolute size-[300px] -translate-x-2 -translate-y-4 opacity-0 mix-blend-difference"
+        className="bg-foreground pointer-events-none absolute size-[300px] mix-blend-difference"
         style={{
           clipPath: 'polygon(53% 10%, 84% 25%, 89% 61%, 75% 100%, 36% 96%, 0% 60%, 14% 28%)',
-          pointerEvents: 'none',
         }}
       />
     </div>

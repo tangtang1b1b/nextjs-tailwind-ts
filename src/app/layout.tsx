@@ -34,10 +34,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html lang="en">
-      <body className={`${geistCoiny.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistCoiny.variable} ${geistMono.variable} flex flex-col items-center antialiased`}>
         <Cursor />
         <Header menuItems={menuItems} />
-        <div className="mx-auto h-screen max-h-[calc(100vh-160px)] max-w-screen-2xl px-5">
+        <div className="mx-auto px-5 pt-20">
           <MotionMain>{children}</MotionMain>
         </div>
         <Footer />
