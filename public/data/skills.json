@@ -1,0 +1,35 @@
+[
+  {
+    "category": "Frontend",
+    "skills": [
+      { "icon": "⚛️", "name": "React", "level": 90 },
+      { "icon": "🔷", "name": "TypeScript", "level": 85 },
+      { "icon": "🎨", "name": "Tailwind CSS", "level": 88 },
+      { "icon": "📱", "name": "Next.js", "level": 82 },
+      { "icon": "🟢", "name": "Vue.js", "level": 75 },
+      { "icon": "🟡", "name": "JavaScript", "level": 92 }
+    ]
+  },
+  {
+    "category": "Backend",
+    "skills": [
+      { "icon": "🟢", "name": "Node.js", "level": 80 },
+      { "icon": "🐍", "name": "Python", "level": 78 },
+      { "icon": "🍃", "name": "MongoDB", "level": 75 },
+      { "icon": "🐘", "name": "PostgreSQL", "level": 70 },
+      { "icon": "🔴", "name": "Redis", "level": 68 },
+      { "icon": "☁️", "name": "AWS", "level": 72 }
+    ]
+  },
+  {
+    "category": "Tools",
+    "skills": [
+      { "icon": "🐙", "name": "Git", "level": 88 },
+      { "icon": "🐳", "name": "Docker", "level": 65 },
+      { "icon": "🔧", "name": "Webpack", "level": 70 },
+      { "icon": "📦", "name": "npm/yarn", "level": 85 },
+      { "icon": "🎯", "name": "Jest", "level": 75 },
+      { "icon": "📊", "name": "Figma", "level": 80 }
+    ]
+  }
+]
