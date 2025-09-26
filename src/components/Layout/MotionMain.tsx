@@ -9,8 +9,6 @@ export default function MotionMain({ children }: { children: React.ReactNode }) 
 
   useEffect(() => {
     if (prevPath.current !== pathname) {
-      // console.log('Route changed from:', prevPath.current, 'to:', pathname)
-
       if (typeof document !== 'undefined' && document.startViewTransition) {
         const transition = document.startViewTransition(() => {
           setDisplayLocation(pathname)
