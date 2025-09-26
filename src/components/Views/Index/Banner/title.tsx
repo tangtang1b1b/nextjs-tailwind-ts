@@ -40,7 +40,8 @@ export default function Title() {
           typed = ''
           element.textContent = typed
           const nextWord = getRandomWord()
-          setCurrentWord(nextWord)
+          // 直接開始下一個詞的打字，不依賴狀態更新
+          startType(nextWord, 0)
         }, 2500)
       }
     }
@@ -60,7 +61,7 @@ export default function Title() {
         element.textContent = ''
       }
     }
-  }, [currentWord, isClient]) // 依賴 currentWord 和 isClient
+  }, [isClient]) // 只依賴 isClient，不依賴 currentWord
 
   return (
     <div className="flex size-full flex-col justify-center gap-5 font-mono font-bold select-none">
