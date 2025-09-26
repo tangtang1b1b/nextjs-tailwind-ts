@@ -10,7 +10,7 @@ interface SkillCategory {
 }
 
 interface SkillProps {
-  skillData?: SkillCategory[]
+  skillData?: SkillCategory[] | null
 }
 
 export default function Skill({ skillData }: SkillProps) {
