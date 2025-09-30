@@ -1,4 +1,6 @@
 import HeadTitle from '@/components/Modal/HeadTitle'
+import SkillIcon from '@/components/Modal/SkillIcon'
+import Image from 'next/image'
 
 interface SkillCategory {
   category: string
@@ -15,24 +17,24 @@ interface SkillProps {
 
 export default function Skill({ skillData }: SkillProps) {
   return (
-    <section className="flex h-screen w-full flex-col gap-15">
+    <section className="flex w-full max-w-screen-2xl flex-col gap-15">
       <HeadTitle title="Skills" />
       {skillData?.map((categoryData, categoryIndex) => (
-        <div key={categoryIndex} className="flex w-full gap-8">
-          <div className="w-1/5">
-            <h3 className="mb-4 text-2xl font-bold text-neutral-400">{categoryData.category}</h3>
+        <div key={categoryIndex} className="flex w-full flex-col gap-8 md:flex-row">
+          <div className="w-full md:w-1/5">
+            <h3 className="mb-4 text-center text-2xl font-bold text-neutral-400 md:text-start">{categoryData.category}</h3>
           </div>
-          <div className="w-4/5">
-            <div className="grid grid-cols-4 gap-10">
+          <div className="w-full md:w-4/5">
+            <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
               {categoryData.skills?.map((skill, skillIndex) => (
                 <div
                   key={skillIndex}
                   className="border-foreground/40 shadow-card shadow-foreground/25 flex aspect-square flex-col items-center rounded-lg border bg-stone-800 p-4"
                 >
-                  <span className="text-3xl">{skill.icon}</span>
-                  <div className="flex w-full flex-col items-center">
-                    <div className="mb-2 flex items-center justify-between">
-                      <span className="text-xl font-medium">{skill.name}</span>
+                  <div className="flex size-full flex-col items-center justify-between">
+                    <div className="mb-2 flex flex-col items-center justify-between">
+                      <SkillIcon iconName={skill.icon} className="mb-2 h-12 w-12" />
+                      <span className="text-center text-xl font-medium">{skill.name}</span>
                     </div>
                     <div className="h-2 w-full overflow-hidden rounded-full">
                       <div
@@ -43,7 +45,6 @@ export default function Skill({ skillData }: SkillProps) {
                         }}
                       />
                     </div>
-                    <span className="text-lg">{skill.level}%</span>
                   </div>
                 </div>
               ))}
