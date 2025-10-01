@@ -8,7 +8,7 @@ export default function Deco() {
   const rockRef = useRef<HTMLDivElement>(null)
   const engineRef = useRef<Matter.Engine | null>(null)
   const renderRef = useRef<Matter.Render | null>(null)
-  const [containerSize, setContainerSize] = useState({ width: 600, height: 400 })
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 })
 
   const init = () => {
     if (!rockRef.current) return
@@ -33,8 +33,6 @@ export default function Deco() {
   useEffect(() => {
     if (!containerRef.current) return
 
-    init()
-
     const updateContainerSize = () => {
       if (containerRef.current) {
         setContainerSize({
@@ -43,9 +41,11 @@ export default function Deco() {
         })
       }
     }
-
-    updateContainerSize()
-    window.addEventListener('resize', updateContainerSize)
+    init()
+    setTimeout(() => {
+      updateContainerSize()
+      window.addEventListener('resize', updateContainerSize)
+    }, 33)
 
     return () => {
       window.removeEventListener('resize', updateContainerSize)
@@ -54,13 +54,14 @@ export default function Deco() {
 
   // 第二個 useEffect：負責初始化物理引擎（依賴 containerSize）
   useEffect(() => {
-    if (!containerRef.current) return
+    const container = containerRef.current
+    if (!container) return
 
     // 現在可以正確使用更新後的 containerSize
     const containerWidth = containerSize.width
     const containerHeight = containerSize.height
 
-    const rockSize = 300
+    const rockSize = window.innerWidth > 768 ? 300 : 200
 
     // 創建物理引擎
     const engine = Matter.Engine.create()
@@ -73,7 +74,7 @@ export default function Deco() {
 
     // 創建渲染器（使用正確的尺寸）
     const render = Matter.Render.create({
-      element: containerRef.current,
+      element: container,
       engine: engine,
       options: {
         width: containerWidth,
@@ -157,7 +158,7 @@ export default function Deco() {
     // 滑鼠移動事件處理
     const mousePosition = { x: 0, y: 0 }
     const handleMouseMove = (event: MouseEvent) => {
-      const rect = containerRef.current?.getBoundingClientRect()
+      const rect = container?.getBoundingClientRect()
       if (rect) {
         mousePosition.x = event.clientX - rect.left
         mousePosition.y = event.clientY - rect.top
@@ -193,7 +194,7 @@ export default function Deco() {
     }
 
     // 註冊滑鼠事件
-    containerRef.current.addEventListener('mousemove', handleMouseMove)
+    container.addEventListener('mousemove', handleMouseMove)
 
     // 邊界檢測和重置功能
     const checkBoundariesAndReset = () => {
@@ -235,8 +236,7 @@ export default function Deco() {
 
     // 清理函數
     return () => {
-      // 複製 ref 值到變數中，避免 cleanup 時 ref 已改變
-      const container = containerRef.current
+      // 使用在 useEffect 開始時複製的 container 變數
       if (container) {
         container.removeEventListener('mousemove', handleMouseMove)
       }
@@ -252,11 +252,10 @@ export default function Deco() {
         engineRef.current = null
       }
     }
-  }, [containerSize]) // 依賴 containerSize，當尺寸更新時重新初始化
+  }, [containerSize])
 
   return (
-    <div className="absolute right-0 size-full">
-      <div ref={containerRef} className="absolute size-full" />
+    <div ref={containerRef} className="absolute right-0 size-full overflow-hidden">
       <div
         ref={rockRef}
         className="bg-foreground pointer-events-none absolute size-[300px] mix-blend-difference"

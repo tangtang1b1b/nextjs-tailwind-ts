@@ -2,34 +2,57 @@
   {
     "category": "Frontend",
     "skills": [
-      { "icon": "⚛️", "name": "React", "level": 90 },
-      { "icon": "🔷", "name": "TypeScript", "level": 85 },
-      { "icon": "🎨", "name": "Tailwind CSS", "level": 88 },
-      { "icon": "📱", "name": "Next.js", "level": 82 },
-      { "icon": "🟢", "name": "Vue.js", "level": 75 },
-      { "icon": "🟡", "name": "JavaScript", "level": 92 }
+      { "icon": "siHTML5", "name": "HTML5", "level": 100 },
+      { "icon": "siCSS", "name": "CSS", "level": 100 },
+      { "icon": "siNuxt", "name": "Nuxt.js", "level": 100 },
+      { "icon": "siVuedotjs", "name": "Vue.js", "level": 100 },
+      { "icon": "siNextdotjs", "name": "Next.js", "level": 50 },
+      { "icon": "siReact", "name": "React", "level": 50 },
+      { "icon": "siTypescript", "name": "TypeScript", "level": 50 },
+      { "icon": "siJavascript", "name": "JavaScript", "level": 100 },
+      { "icon": "siTailwindcss", "name": "Tailwind CSS", "level": 100 },
+      { "icon": "siSass", "name": "Sass", "level": 100 }
+    ]
+  },
+  {
+    "category": "Frontend Libraries",
+    "skills": [
+      { "icon": "sigsap", "name": "Gsap", "level": 100 },
+      { "icon": "sithreedotjs", "name": "Three.js", "level": 50 },
+      { "icon": "siswiper", "name": "Swipper", "level": 100 },
+      { "icon": "sijquery", "name": "Jquery", "level": 50 },
+      { "icon": "simotion", "name": "Motion", "level": 50 }
     ]
   },
   {
     "category": "Backend",
     "skills": [
-      { "icon": "🟢", "name": "Node.js", "level": 80 },
-      { "icon": "🐍", "name": "Python", "level": 78 },
-      { "icon": "🍃", "name": "MongoDB", "level": 75 },
-      { "icon": "🐘", "name": "PostgreSQL", "level": 70 },
-      { "icon": "🔴", "name": "Redis", "level": 68 },
-      { "icon": "☁️", "name": "AWS", "level": 72 }
+      { "icon": "siNodedotjs", "name": "Node.js", "level": 50 },
+      { "icon": "siExpress", "name": "Express.js", "level": 20 },
+      { "icon": "siWordpress", "name": "WordPress", "level": 50 },
+      { "icon": "siPHP", "name": "PHP", "level": 20 },
+      { "icon": "siAWS", "name": "AWS", "level": 50 }
     ]
   },
   {
-    "category": "Tools",
+    "category": "Development Tools",
     "skills": [
-      { "icon": "🐙", "name": "Git", "level": 88 },
-      { "icon": "🐳", "name": "Docker", "level": 65 },
-      { "icon": "🔧", "name": "Webpack", "level": 70 },
-      { "icon": "📦", "name": "npm/yarn", "level": 85 },
-      { "icon": "🎯", "name": "Jest", "level": 75 },
-      { "icon": "📊", "name": "Figma", "level": 80 }
+      { "icon": "siGit", "name": "Git", "level": 100 },
+      { "icon": "siDocker", "name": "Docker", "level": 50 },
+      { "icon": "siNpm", "name": "npm", "level": 100 },
+      { "icon": "singinx", "name": "Nginx", "level": 50 },
+      { "icon": "siubuntu", "name": "Ubuntu", "level": 50 }
+    ]
+  },
+  {
+    "category": "Others",
+    "skills": [
+      { "icon": "siGit", "name": "Git", "level": 100 },
+      { "icon": "sigoogleanalytics", "name": "Google Analytics", "level": 100 },
+      { "icon": "sigoogletagmanager", "name": "Google Tag Manager", "level": 100 },
+      { "icon": "siFigma", "name": "Figma", "level": 50 },
+      { "icon": "sipostman", "name": "Postman", "level": 50 },
+      { "icon": "siswagger", "name": "Swagger", "level": 50 }
     ]
   }
 ]

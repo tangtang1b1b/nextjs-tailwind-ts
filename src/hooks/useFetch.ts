@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 interface FetchParams {
   url: string
@@ -23,7 +23,7 @@ interface UseSkillsReturn {
 export function useFetch({ url }: FetchParams): UseSkillsReturn {
   const [data, setData] = useState<SkillCategory[] | null>(null)
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const response = await fetch(url)
 
@@ -36,11 +36,11 @@ export function useFetch({ url }: FetchParams): UseSkillsReturn {
     } catch (err) {
       console.error('Error fetching skills data:', err)
     }
-  }
+  }, [url])
 
   useEffect(() => {
     fetchData()
-  }, [])
+  }, [fetchData])
 
   return {
     data,

@@ -1,45 +1,45 @@
 'use client'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 export default function Cursor() {
   const [isMouseInWindow, setIsMouseInWindow] = useState(false)
   const fabRef = useRef<HTMLDivElement>(null)
 
-  const handleMouseDown = () => {
+  const handleMouseDown = useCallback(() => {
     if (fabRef.current) {
       fabRef.current.style.transform = 'scale(2)'
     }
-  }
+  }, [])
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     if (fabRef.current) {
       fabRef.current.style.transform = 'scale(1)'
     }
-  }
+  }, [])
 
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = useCallback((e: MouseEvent) => {
     if (fabRef.current) {
       fabRef.current.style.left = `${e.clientX - 20}px`
       fabRef.current.style.top = `${e.clientY - 20}px`
     }
     setIsMouseInWindow(true)
-  }
+  }, [])
 
-  const handleGlobalMouseDown = () => {
+  const handleGlobalMouseDown = useCallback(() => {
     handleMouseDown()
-  }
+  }, [handleMouseDown])
 
-  const handleGlobalMouseUp = () => {
+  const handleGlobalMouseUp = useCallback(() => {
     handleMouseUp()
-  }
+  }, [handleMouseUp])
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setIsMouseInWindow(false)
-  }
+  }, [])
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = useCallback(() => {
     setIsMouseInWindow(true)
-  }
+  }, [])
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove)
@@ -55,22 +55,24 @@ export default function Cursor() {
       document.removeEventListener('mouseleave', handleMouseLeave)
       document.removeEventListener('mouseenter', handleMouseEnter)
     }
-  }, [])
+  }, [handleMouseMove, handleGlobalMouseDown, handleGlobalMouseUp, handleMouseLeave, handleMouseEnter])
   return (
     <>
       <style jsx global>{`
-        body {
-          cursor: none !important;
-        }
-        *,
-        *:before,
-        *:after {
-          cursor: none !important;
+        @media (min-width: 1024px) {
+          body {
+            cursor: none !important;
+          }
+          *,
+          *:before,
+          *:after {
+            cursor: none !important;
+          }
         }
       `}</style>
       <div
         ref={fabRef}
-        className={`pointer-events-none fixed z-3000 size-10 rounded-full bg-white mix-blend-difference transition-transform ${isMouseInWindow ? 'opacity-100' : 'opacity-0'}`}
+        className={`pointer-events-none fixed z-3000 size-10 rounded-full mix-blend-difference transition-transform lg:bg-white ${isMouseInWindow ? 'opacity-100' : 'opacity-0'}`}
       ></div>
     </>
   )
