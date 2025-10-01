@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <Skill skillData={skillsData} />
+      <Skill skillData={skillsData || []} />
     </>
   )
 }
