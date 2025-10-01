@@ -51,7 +51,7 @@ export default function SkillIcon({ iconName, className = 'w-8 h-8' }: SkillIcon
 
   // 如果找到 Simple Icons 的圖標
   if (icon && typeof icon !== 'function') {
-    let modifiedSvg = icon.svg
+    const modifiedSvg = icon.svg
       .replace(/fill="[^"]*"/g, 'fill="white"')
       .replace(/stroke="[^"]*"/g, 'stroke="white"')
       .replace(/#[0-9a-fA-F]{6}/g, 'white')

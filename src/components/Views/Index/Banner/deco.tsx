@@ -44,8 +44,8 @@ export default function Deco() {
     init()
     setTimeout(() => {
       updateContainerSize()
+      window.addEventListener('resize', updateContainerSize)
     }, 33)
-    window.addEventListener('resize', updateContainerSize)
 
     return () => {
       window.removeEventListener('resize', updateContainerSize)
@@ -54,7 +54,8 @@ export default function Deco() {
 
   // 第二個 useEffect：負責初始化物理引擎（依賴 containerSize）
   useEffect(() => {
-    if (!containerRef.current) return
+    const container = containerRef.current
+    if (!container) return
 
     // 現在可以正確使用更新後的 containerSize
     const containerWidth = containerSize.width
@@ -73,7 +74,7 @@ export default function Deco() {
 
     // 創建渲染器（使用正確的尺寸）
     const render = Matter.Render.create({
-      element: containerRef.current,
+      element: container,
       engine: engine,
       options: {
         width: containerWidth,
@@ -157,7 +158,7 @@ export default function Deco() {
     // 滑鼠移動事件處理
     const mousePosition = { x: 0, y: 0 }
     const handleMouseMove = (event: MouseEvent) => {
-      const rect = containerRef.current?.getBoundingClientRect()
+      const rect = container?.getBoundingClientRect()
       if (rect) {
         mousePosition.x = event.clientX - rect.left
         mousePosition.y = event.clientY - rect.top
@@ -193,7 +194,7 @@ export default function Deco() {
     }
 
     // 註冊滑鼠事件
-    containerRef.current.addEventListener('mousemove', handleMouseMove)
+    container.addEventListener('mousemove', handleMouseMove)
 
     // 邊界檢測和重置功能
     const checkBoundariesAndReset = () => {
@@ -235,8 +236,7 @@ export default function Deco() {
 
     // 清理函數
     return () => {
-      // 複製 ref 值到變數中，避免 cleanup 時 ref 已改變
-      const container = containerRef.current
+      // 使用在 useEffect 開始時複製的 container 變數
       if (container) {
         container.removeEventListener('mousemove', handleMouseMove)
       }
