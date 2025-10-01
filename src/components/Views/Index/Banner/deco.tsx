@@ -8,7 +8,7 @@ export default function Deco() {
   const rockRef = useRef<HTMLDivElement>(null)
   const engineRef = useRef<Matter.Engine | null>(null)
   const renderRef = useRef<Matter.Render | null>(null)
-  const [containerSize, setContainerSize] = useState({ width: 600, height: 400 })
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 })
 
   const init = () => {
     if (!rockRef.current) return
@@ -33,8 +33,6 @@ export default function Deco() {
   useEffect(() => {
     if (!containerRef.current) return
 
-    init()
-
     const updateContainerSize = () => {
       if (containerRef.current) {
         setContainerSize({
@@ -43,8 +41,10 @@ export default function Deco() {
         })
       }
     }
-
-    updateContainerSize()
+    init()
+    setTimeout(() => {
+      updateContainerSize()
+    }, 33)
     window.addEventListener('resize', updateContainerSize)
 
     return () => {
@@ -60,7 +60,7 @@ export default function Deco() {
     const containerWidth = containerSize.width
     const containerHeight = containerSize.height
 
-    const rockSize = 300
+    const rockSize = window.innerWidth > 768 ? 300 : 200
 
     // 創建物理引擎
     const engine = Matter.Engine.create()
@@ -252,11 +252,10 @@ export default function Deco() {
         engineRef.current = null
       }
     }
-  }, [containerSize]) // 依賴 containerSize，當尺寸更新時重新初始化
+  }, [containerSize])
 
   return (
-    <div className="absolute right-0 size-full">
-      <div ref={containerRef} className="absolute size-full" />
+    <div ref={containerRef} className="absolute right-0 size-full overflow-hidden">
       <div
         ref={rockRef}
         className="bg-foreground pointer-events-none absolute size-[300px] mix-blend-difference"

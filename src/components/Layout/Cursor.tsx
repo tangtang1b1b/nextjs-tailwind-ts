@@ -59,18 +59,20 @@ export default function Cursor() {
   return (
     <>
       <style jsx global>{`
-        body {
-          cursor: none !important;
-        }
-        *,
-        *:before,
-        *:after {
-          cursor: none !important;
+        @media (min-width: 1024px) {
+          body {
+            cursor: none !important;
+          }
+          *,
+          *:before,
+          *:after {
+            cursor: none !important;
+          }
         }
       `}</style>
       <div
         ref={fabRef}
-        className={`pointer-events-none fixed z-3000 size-10 rounded-full bg-white mix-blend-difference transition-transform ${isMouseInWindow ? 'opacity-100' : 'opacity-0'}`}
+        className={`pointer-events-none fixed z-3000 size-10 rounded-full mix-blend-difference transition-transform lg:bg-white ${isMouseInWindow ? 'opacity-100' : 'opacity-0'}`}
       ></div>
     </>
   )

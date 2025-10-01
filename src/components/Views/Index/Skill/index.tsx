@@ -25,11 +25,11 @@ export default function Skill({ skillData }: SkillProps) {
             <h3 className="mb-4 text-center text-2xl font-bold text-neutral-400 md:text-start">{categoryData.category}</h3>
           </div>
           <div className="w-full md:w-4/5">
-            <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+            <div className="grid w-full grid-cols-2 gap-10 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
               {categoryData.skills?.map((skill, skillIndex) => (
                 <div
                   key={skillIndex}
-                  className="border-foreground/40 shadow-card shadow-foreground/25 flex aspect-square flex-col items-center rounded-lg border bg-stone-800 p-4"
+                  className="border-foreground/40 shadow-card md:max-w-auto shadow-foreground/25 mx-auto flex aspect-square w-full max-w-sm flex-col items-center rounded-lg border bg-stone-800 p-4"
                 >
                   <div className="flex size-full flex-col items-center justify-between">
                     <div className="mb-2 flex flex-col items-center justify-between">
