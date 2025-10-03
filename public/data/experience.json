@@ -1,0 +1,96 @@
+[
+  {
+    "name": "AAAAAAA",
+    "jobTitle": "Frontend Developer",
+    "duration": "2020 - Present",
+    "technology": [
+      "Vue.js",
+      "Nuxt.js",
+      "React",
+      "Next.js",
+      "JavaScript",
+      "TypeScript",
+      "HTML5",
+      "CSS3",
+      "Sass",
+      "Tailwind CSS",
+      "GSAP",
+      "Three.js",
+      "Framer Motion"
+    ],
+    "jobIntro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "jobDetail": [
+      { "feature": "獨立作業", "content": "能獨立完成前端專案開發，從需求分析、設計、實作到測試與部署皆有豐富經驗。" },
+      { "feature": "技術優化", "content": "能獨立完成前端專案開發，從需求分析、設計、實作到測試與部署皆有豐富經驗。" }
+    ]
+  },
+  {
+    "name": "BBBBBBB",
+    "jobTitle": "Frontend Developer",
+    "duration": "2020 - Present",
+    "technology": [
+      "Vue.js",
+      "Nuxt.js",
+      "React",
+      "Next.js",
+      "JavaScript",
+      "TypeScript",
+      "HTML5",
+      "CSS3",
+      "Sass",
+      "Tailwind CSS",
+      "GSAP",
+      "Three.js",
+      "Framer Motion"
+    ],
+    "jobIntro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "jobDetail": [
+      { "feature": "獨立作業", "content": "能獨立完成前端專案開發，從需求分析、設計、實作到測試與部署皆有豐富經驗。" },
+      { "feature": "團隊協作", "content": "能與團隊成員密切合作，共同推進專案進展，並解決各種技術挑戰。" }
+    ]
+  },
+  {
+    "name": "CCCCCCC",
+    "jobTitle": "Frontend Developer",
+    "duration": "2020 - Present",
+    "technology": [
+      "Vue.js",
+      "Nuxt.js",
+      "React",
+      "Next.js",
+      "JavaScript",
+      "TypeScript",
+      "HTML5",
+      "CSS3",
+      "Sass",
+      "Tailwind CSS",
+      "GSAP",
+      "Three.js",
+      "Framer Motion"
+    ],
+    "jobIntro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "jobDetail": [{ "feature": "獨立作業", "content": "能獨立完成前端專案開發，從需求分析、設計、實作到測試與部署皆有豐富經驗。" }]
+  },
+  {
+    "name": "DDDDDDD",
+    "jobTitle": "Frontend Developer",
+    "duration": "2020 - Present",
+    "technology": [
+      "Vue.js",
+      "Nuxt.js",
+      "React",
+      "Next.js",
+      "JavaScript",
+      "TypeScript",
+      "HTML5",
+      "CSS3",
+      "Sass",
+      "Tailwind CSS",
+      "GSAP",
+      "Three.js",
+      "Framer Motion"
+    ],
+    "jobIntro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "jobDetail": [{ "feature": "獨立作業", "content": "能獨立完成前端專案開發，從需求分析、設計、實作到測試與部署皆有豐富經驗。" }]
+  }
+]
