@@ -4,24 +4,13 @@ interface FetchParams {
   url: string
 }
 
-interface SkillItem {
-  icon: string
-  name: string
-  level: number
-}
-
-interface SkillCategory {
-  category: string
-  skills: SkillItem[]
-}
-
-interface UseSkillsReturn {
-  data: SkillCategory[] | null
+interface UseFetchReturn<T> {
+  data: T | null
   refetch: () => void
 }
 
-export function useFetch({ url }: FetchParams): UseSkillsReturn {
-  const [data, setData] = useState<SkillCategory[] | null>(null)
+export function useFetch<T>({ url }: FetchParams): UseFetchReturn<T> {
+  const [data, setData] = useState<T | null>(null)
 
   const fetchData = useCallback(async () => {
     try {
@@ -31,7 +20,7 @@ export function useFetch({ url }: FetchParams): UseSkillsReturn {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
 
-      const result: SkillCategory[] = await response.json()
+      const result: T = await response.json()
       setData(result)
     } catch (err) {
       console.error('Error fetching skills data:', err)

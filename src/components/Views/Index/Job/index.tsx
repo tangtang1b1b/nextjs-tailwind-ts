@@ -1,0 +1,104 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import HeadTitle from '@/components/Modal/HeadTitle'
+
+interface JobData {
+  name: string
+  jobTitle: string
+  duration: string
+  jobIntro: string
+  technology: string[]
+  jobDetail: {
+    feature: string
+    content: string
+  }[]
+}
+
+interface JobProps {
+  jobData: JobData[]
+}
+
+export default function Job({ jobData }: JobProps) {
+  return (
+    <section className="flex w-full max-w-screen-2xl flex-col gap-15">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <HeadTitle title="Experience" />
+      </motion.div>
+
+      {jobData?.map((data, dataIndex) => (
+        <motion.div
+          key={dataIndex}
+          className="flex w-full flex-col justify-center gap-8 md:flex-row"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+          }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className=""
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+            }}
+            viewport={{ once: true }}
+          >
+            <h3 className="mb-4 text-center text-2xl font-bold text-neutral-400 md:text-start">{data.name}</h3>
+          </motion.div>
+
+          <div className="">
+            <div className="w-full">
+              <motion.div
+                className="border-foreground/40 shadow-card shadow-foreground/25 flex w-full cursor-pointer flex-col rounded-lg border bg-stone-800 p-4"
+                initial={{
+                  opacity: 0,
+                  y: 30,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.5,
+                }}
+                viewport={{ once: true }}
+              >
+                <div className="mb-5 flex size-full items-center justify-between">
+                  <h3 className="mb-4 text-center text-2xl font-bold md:text-start">{data.name}</h3>
+                  <div className="flex items-center justify-between gap-5 divide-x-2 divide-white/50">
+                    <p className="pr-5 text-xl font-bold text-blue-500">{data.jobTitle}</p>
+                    <p className="text-neutral-400">{data.duration}</p>
+                  </div>
+                </div>
+                <div className="mb-3 flex w-2/3 flex-wrap gap-2">
+                  {data.technology?.map((tech, techIndex) => (
+                    <span key={techIndex} className="rounded-full bg-blue-500 px-3 py-1 text-sm font-semibold text-white">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="mb-5 text-center text-xl font-medium">{data.jobIntro}</div>
+                <div className="accordion flex flex-col items-center gap-3">
+                  {data.jobDetail?.map((detail, detailIndex) => (
+                    <div key={detailIndex} className="flex size-full flex-col gap-1 text-center">
+                      <h4 className="text-xl font-bold text-blue-500">{detail.feature}</h4>
+                      <p className="text-neutral-400">{detail.content}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </section>
+  )
+}
