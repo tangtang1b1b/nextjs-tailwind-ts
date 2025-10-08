@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import HeadTitle from '@/components/Modal/HeadTitle'
+import { useState } from 'react'
 
 interface JobData {
   name: string
@@ -20,6 +21,23 @@ interface JobProps {
 }
 
 export default function Job({ jobData }: JobProps) {
+  const [openAccordions, setOpenAccordions] = useState<{ [key: number]: boolean }>({})
+
+  const toggleAccordion = (dataIndex: number) => {
+    setOpenAccordions((prev) => ({
+      ...prev,
+      [dataIndex]: !prev[dataIndex],
+    }))
+    const accordion = document.getElementById(`accordion-${dataIndex}`)
+    if (accordion) {
+      if (accordion.style.maxHeight && accordion.style.maxHeight !== '0px') {
+        accordion.style.maxHeight = '0px'
+      } else {
+        accordion.style.maxHeight = accordion.scrollHeight + 'px'
+      }
+    }
+  }
+
   return (
     <section className="flex w-full max-w-screen-2xl flex-col gap-15">
       <motion.div
@@ -86,13 +104,22 @@ export default function Job({ jobData }: JobProps) {
                   ))}
                 </div>
                 <div className="mb-5 text-center text-xl font-medium">{data.jobIntro}</div>
-                <div className="accordion flex flex-col items-center gap-3">
-                  {data.jobDetail?.map((detail, detailIndex) => (
-                    <div key={detailIndex} className="flex size-full flex-col gap-1 text-center">
-                      <h4 className="text-xl font-bold text-blue-500">{detail.feature}</h4>
-                      <p className="text-neutral-400">{detail.content}</p>
-                    </div>
-                  ))}
+                <div className="accordion">
+                  <button className="w-full text-center text-blue-400" onClick={() => toggleAccordion(dataIndex)}>
+                    {openAccordions[dataIndex] ? 'show less' : 'show more'}
+                  </button>
+                  <div
+                    id={`accordion-${dataIndex}`}
+                    className="flex flex-col items-center gap-3 overflow-hidden transition-all duration-500 ease-in-out"
+                    style={{ maxHeight: '0px' }}
+                  >
+                    {data.jobDetail?.map((detail, detailIndex) => (
+                      <div key={detailIndex} className="mt-3 flex size-full flex-col gap-1 text-center">
+                        <h4 className="text-xl font-bold text-blue-500">{detail.feature}</h4>
+                        <p className="text-neutral-400">{detail.content}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             </div>
