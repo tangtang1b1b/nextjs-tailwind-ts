@@ -64,7 +64,7 @@ export default function Job({ jobData }: JobProps) {
           <div className="">
             <div className="w-full">
               <motion.div
-                className="border-foreground/40 shadow-card shadow-foreground/25 flex w-full cursor-pointer flex-col rounded-lg border bg-stone-800 p-4"
+                className="shadow-card shadow-foreground/25 flex w-full cursor-pointer flex-col rounded-lg bg-stone-800 p-4"
                 initial={{
                   opacity: 0,
                   y: 30,

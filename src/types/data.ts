@@ -18,3 +18,20 @@ export interface JobData {
     content: string
   }[]
 }
+
+export interface ProjectData {
+  name: string
+  image: string
+  url: string
+  type: string
+  year: string
+  jobIntro: string
+  features: string[]
+  core: string[]
+  technology: { type: string; items: string[] }[]
+  mainDetail: {
+    feature: string
+    content: string
+    use: string
+  }[]
+}

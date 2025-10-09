@@ -49,7 +49,7 @@ export default function Skill({ skillData }: SkillProps) {
               {categoryData.skills?.map((skill, skillIndex) => (
                 <motion.div
                   key={skillIndex}
-                  className="border-foreground/40 shadow-card md:max-w-auto shadow-foreground/25 mx-auto flex min-h-[150px] w-full max-w-sm cursor-pointer flex-col items-center rounded-lg border bg-stone-800 p-4 md:min-h-[220px] lg:min-h-[180px]"
+                  className="border-foreground/20 shadow-card md:max-w-auto shadow-foreground/25 mx-auto flex min-h-[150px] w-full max-w-sm cursor-pointer flex-col items-center rounded-lg border bg-stone-800 p-4 md:min-h-[220px] lg:min-h-[180px]"
                   initial={{
                     opacity: 0,
                     scale: 0.8,

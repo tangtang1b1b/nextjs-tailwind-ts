@@ -1,0 +1,162 @@
+[
+  {
+    "name": "AAAAAAA",
+    "image": "/images/og_image.jpg",
+    "url": "https://example.com",
+    "type": "大型企業官網 | 前後端協作",
+    "year": "2024",
+    "technology": [
+      { "type": "frontend", "items": ["Vue.js", "Nuxt.js", "React", "Next.js"] },
+      { "type": "backend", "items": ["Node.js", "Express", "MongoDB"] },
+      { "type": "DevOps", "items": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Sass", "Tailwind CSS"] },
+      { "type": "Library", "items": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Sass", "Tailwind CSS"] },
+      { "type": "tools", "items": ["figma"] }
+    ],
+    "features": ["精準Canvas像素動態", "動態視覺效果", "CMS系統"],
+    "jobIntro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "mainDetail": [
+      {
+        "feature": "精準Canvas像素動態",
+        "content": "運用P5.js實現精準的像素動態，以及使用GSAP優化動態過渡效能以及流暢性。",
+        "use": "P5.js, GSAP"
+      },
+      {
+        "feature": "動態視覺效果",
+        "content": "使用Three.js以及Framer Motion實現高效能的3D動畫效果，提升使用者互動體驗。",
+        "use": "Three.js, Framer Motion"
+      },
+      {
+        "feature": "CMS系統",
+        "content": "使用CMS系統實現可擴充的網站架構，以及使用Nuxt3框架實現可擴充的網站架構。",
+        "use": "Three.js, Framer Motion"
+      },
+      {
+        "feature": "複雜關聯資料結構",
+        "content": "使用PHP以及WordPress內建查找Function實現複雜關聯資料結構，提升網站載入速度和使用者體驗。",
+        "use": "Three.js, Framer Motion"
+      },
+      { "feature": "SEO優化", "content": "實施完整的搜尋引擎優化策略，提升品牌在線可見度", "use": "Three.js, Framer Motion" }
+    ],
+    "core": ["精準Canvas像素動態", "動態視覺效果", "CMS系統", "複雜關聯資料結構", "SEO優化"]
+  },
+  {
+    "name": "BBBBBBB",
+    "image": "/images/projects/project-1.png",
+    "url": "https://example.com",
+    "type": "大型企業官網 | 前後端協作",
+    "year": "2024",
+    "technology": [
+      { "type": "frontend", "items": ["Vue.js", "Nuxt.js", "React", "Next.js"] },
+      { "type": "backend", "items": ["Node.js", "Express", "MongoDB"] },
+      { "type": "DevOps", "items": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Sass", "Tailwind CSS"] },
+      { "type": "Library", "items": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Sass", "Tailwind CSS"] },
+      { "type": "tools", "items": ["figma"] }
+    ],
+    "features": ["精準Canvas像素動態", "動態視覺效果", "CMS系統"],
+    "jobIntro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "mainDetail": [
+      {
+        "feature": "精準Canvas像素動態",
+        "content": "運用P5.js實現精準的像素動態，以及使用GSAP優化動態過渡效能以及流暢性。",
+        "use": "P5.js, GSAP"
+      },
+      {
+        "feature": "動態視覺效果",
+        "content": "使用Three.js以及Framer Motion實現高效能的3D動畫效果，提升使用者互動體驗。",
+        "use": "Three.js, Framer Motion"
+      },
+      {
+        "feature": "CMS系統",
+        "content": "使用CMS系統實現可擴充的網站架構，以及使用Nuxt3框架實現可擴充的網站架構。",
+        "use": "Three.js, Framer Motion"
+      },
+      {
+        "feature": "複雜關聯資料結構",
+        "content": "使用PHP以及WordPress內建查找Function實現複雜關聯資料結構，提升網站載入速度和使用者體驗。",
+        "use": "Three.js, Framer Motion"
+      },
+      { "feature": "SEO優化", "content": "實施完整的搜尋引擎優化策略，提升品牌在線可見度", "use": "Three.js, Framer Motion" }
+    ],
+    "core": ["精準Canvas像素動態", "動態視覺效果", "CMS系統", "複雜關聯資料結構", "SEO優化"]
+  },
+  {
+    "name": "CCCCCCC",
+    "image": "/images/projects/project-1.png",
+    "url": "https://example.com",
+    "type": "大型企業官網 | 前後端協作",
+    "year": "2024",
+    "technology": [
+      { "type": "frontend", "items": ["Vue.js", "Nuxt.js", "React", "Next.js"] },
+      { "type": "backend", "items": ["Node.js", "Express", "MongoDB"] },
+      { "type": "DevOps", "items": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Sass", "Tailwind CSS"] },
+      { "type": "Library", "items": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Sass", "Tailwind CSS"] },
+      { "type": "tools", "items": ["figma"] }
+    ],
+    "features": ["精準Canvas像素動態", "動態視覺效果", "CMS系統"],
+    "jobIntro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "mainDetail": [
+      {
+        "feature": "精準Canvas像素動態",
+        "content": "運用P5.js實現精準的像素動態，以及使用GSAP優化動態過渡效能以及流暢性。",
+        "use": "P5.js, GSAP"
+      },
+      {
+        "feature": "動態視覺效果",
+        "content": "使用Three.js以及Framer Motion實現高效能的3D動畫效果，提升使用者互動體驗。",
+        "use": "Three.js, Framer Motion"
+      },
+      {
+        "feature": "CMS系統",
+        "content": "使用CMS系統實現可擴充的網站架構，以及使用Nuxt3框架實現可擴充的網站架構。",
+        "use": "Three.js, Framer Motion"
+      },
+      {
+        "feature": "複雜關聯資料結構",
+        "content": "使用PHP以及WordPress內建查找Function實現複雜關聯資料結構，提升網站載入速度和使用者體驗。",
+        "use": "Three.js, Framer Motion"
+      },
+      { "feature": "SEO優化", "content": "實施完整的搜尋引擎優化策略，提升品牌在線可見度", "use": "Three.js, Framer Motion" }
+    ],
+    "core": ["精準Canvas像素動態", "動態視覺效果", "CMS系統", "複雜關聯資料結構", "SEO優化"]
+  },
+  {
+    "name": "DDDDDDD",
+    "image": "/images/projects/project-1.png",
+    "url": "https://example.com",
+    "type": "大型企業官網 | 前後端協作",
+    "year": "2024",
+    "technology": [
+      { "type": "frontend", "items": ["Vue.js", "Nuxt.js", "React", "Next.js"] },
+      { "type": "backend", "items": ["Node.js", "Express", "MongoDB"] },
+      { "type": "DevOps", "items": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Sass", "Tailwind CSS"] },
+      { "type": "Library", "items": ["JavaScript", "TypeScript", "HTML5", "CSS3", "Sass", "Tailwind CSS"] },
+      { "type": "tools", "items": ["figma"] }
+    ],
+    "features": ["精準Canvas像素動態", "動態視覺效果", "CMS系統"],
+    "jobIntro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "mainDetail": [
+      {
+        "feature": "精準Canvas像素動態",
+        "content": "運用P5.js實現精準的像素動態，以及使用GSAP優化動態過渡效能以及流暢性。",
+        "use": "P5.js, GSAP"
+      },
+      {
+        "feature": "動態視覺效果",
+        "content": "使用Three.js以及Framer Motion實現高效能的3D動畫效果，提升使用者互動體驗。",
+        "use": "Three.js, Framer Motion"
+      },
+      {
+        "feature": "CMS系統",
+        "content": "使用CMS系統實現可擴充的網站架構，以及使用Nuxt3框架實現可擴充的網站架構。",
+        "use": "Three.js, Framer Motion"
+      },
+      {
+        "feature": "複雜關聯資料結構",
+        "content": "使用PHP以及WordPress內建查找Function實現複雜關聯資料結構，提升網站載入速度和使用者體驗。",
+        "use": "Three.js, Framer Motion"
+      },
+      { "feature": "SEO優化", "content": "實施完整的搜尋引擎優化策略，提升品牌在線可見度", "use": "Three.js, Framer Motion" }
+    ],
+    "core": ["精準Canvas像素動態", "動態視覺效果", "CMS系統", "複雜關聯資料結構", "SEO優化"]
+  }
+]

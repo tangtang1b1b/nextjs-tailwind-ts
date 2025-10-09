@@ -10,7 +10,7 @@
   --breakpoint-xl: 1280px;
   --gradient-radial: radial-gradient(circle at center, var(--tw-gradient-stops));
   --gradient-conic: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
-  --shadow-card: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  --shadow-card: 4px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
