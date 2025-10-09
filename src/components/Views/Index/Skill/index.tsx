@@ -11,7 +11,7 @@ interface SkillProps {
 
 export default function Skill({ skillData }: SkillProps) {
   return (
-    <section className="flex w-full max-w-screen-2xl flex-col gap-15">
+    <section className="flex w-full max-w-screen-2xl flex-col gap-10 md:gap-15">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function Skill({ skillData }: SkillProps) {
       {skillData?.map((categoryData, categoryIndex) => (
         <motion.div
           key={categoryIndex}
-          className="flex w-full flex-col gap-8 md:flex-row"
+          className="flex w-full flex-col gap-5 md:flex-row md:gap-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
@@ -41,11 +41,11 @@ export default function Skill({ skillData }: SkillProps) {
             }}
             viewport={{ once: true }}
           >
-            <h3 className="mb-4 text-center text-2xl font-bold text-neutral-400 md:text-start">{categoryData.category}</h3>
+            <h3 className="text-center text-2xl font-bold text-neutral-400 md:text-start">{categoryData.category}</h3>
           </motion.div>
 
           <div className="w-full md:w-4/5">
-            <div className="grid w-full grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
+            <div className="grid w-full grid-cols-2 gap-5 md:grid-cols-3 md:gap-10 lg:grid-cols-5">
               {categoryData.skills?.map((skill, skillIndex) => (
                 <motion.div
                   key={skillIndex}

@@ -28,7 +28,7 @@ export default function Job({ jobData }: JobProps) {
   }
 
   return (
-    <section className="flex w-full max-w-screen-2xl flex-col gap-15">
+    <section className="flex w-full max-w-screen-2xl flex-col gap-10 md:gap-15">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function Job({ jobData }: JobProps) {
           viewport={{ once: true }}
         >
           <motion.div
-            className=""
+            className="hidden md:block"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
@@ -78,14 +78,14 @@ export default function Job({ jobData }: JobProps) {
                 }}
                 viewport={{ once: true }}
               >
-                <div className="mb-5 flex size-full items-center justify-between">
-                  <h3 className="mb-4 text-center text-2xl font-bold md:text-start">{data.name}</h3>
-                  <div className="flex items-center justify-between gap-5 divide-x-2 divide-white/50">
+                <div className="mb-5 flex size-full flex-col justify-between md:flex-row md:items-center">
+                  <h3 className="mb-4 text-start text-2xl font-bold">{data.name}</h3>
+                  <div className="flex flex-col justify-between gap-5 divide-white/50 md:flex-row md:items-center md:divide-x-2">
                     <p className="pr-5 text-xl font-bold text-blue-500">{data.jobTitle}</p>
                     <p className="text-neutral-400">{data.duration}</p>
                   </div>
                 </div>
-                <div className="mb-3 flex w-2/3 flex-wrap gap-2">
+                <div className="mb-3 flex flex-wrap gap-2 md:w-2/3">
                   {data.technology?.map((tech, techIndex) => (
                     <span key={techIndex} className="rounded-full bg-blue-500 px-3 py-1 text-sm font-semibold text-white">
                       {tech}
