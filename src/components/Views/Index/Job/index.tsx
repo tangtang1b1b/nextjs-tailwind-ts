@@ -3,18 +3,7 @@
 import { motion } from 'framer-motion'
 import HeadTitle from '@/components/Modal/HeadTitle'
 import { useState } from 'react'
-
-interface JobData {
-  name: string
-  jobTitle: string
-  duration: string
-  jobIntro: string
-  technology: string[]
-  jobDetail: {
-    feature: string
-    content: string
-  }[]
-}
+import { JobData } from '@/types/data'
 
 interface JobProps {
   jobData: JobData[]
@@ -106,11 +95,11 @@ export default function Job({ jobData }: JobProps) {
                 <div className="mb-5 text-center text-xl font-medium">{data.jobIntro}</div>
                 <div className="accordion">
                   <button className="w-full text-center text-blue-400" onClick={() => toggleAccordion(dataIndex)}>
-                    {openAccordions[dataIndex] ? 'show less' : 'show more'}
+                    {openAccordions[dataIndex] ? 'Show Less' : 'Show More'}
                   </button>
                   <div
                     id={`accordion-${dataIndex}`}
-                    className="flex flex-col items-center gap-3 overflow-hidden transition-all duration-500 ease-in-out"
+                    className={`${openAccordions[dataIndex] ? 'opacity-100' : 'opacity-0'} flex flex-col items-center gap-3 overflow-hidden transition-all duration-500 ease-in-out`}
                     style={{ maxHeight: '0px' }}
                   >
                     {data.jobDetail?.map((detail, detailIndex) => (

@@ -3,18 +3,10 @@
 import { motion } from 'framer-motion'
 import HeadTitle from '@/components/Modal/HeadTitle'
 import SkillIcon from '@/components/Modal/SkillIcon'
-
-interface SkillData {
-  category: string
-  skills: {
-    name: string
-    level: number
-    icon: string
-  }[]
-}
+import { SkillCategory } from '@/types/data'
 
 interface SkillProps {
-  skillData: SkillData[]
+  skillData: SkillCategory[]
 }
 
 export default function Skill({ skillData }: SkillProps) {
@@ -36,7 +28,7 @@ export default function Skill({ skillData }: SkillProps) {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.6,
+            duration: 0.3,
           }}
           viewport={{ once: true }}
         >
@@ -45,28 +37,29 @@ export default function Skill({ skillData }: SkillProps) {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.6,
+              duration: 0.3,
             }}
             viewport={{ once: true }}
           >
             <h3 className="mb-4 text-center text-2xl font-bold text-neutral-400 md:text-start">{categoryData.category}</h3>
           </motion.div>
 
-          <motion.div className="w-full md:w-4/5">
+          <div className="w-full md:w-4/5">
             <div className="grid w-full grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
               {categoryData.skills?.map((skill, skillIndex) => (
                 <motion.div
                   key={skillIndex}
-                  className="border-foreground/40 shadow-card md:max-w-auto shadow-foreground/25 mx-auto flex aspect-square w-full max-w-sm cursor-pointer flex-col items-center rounded-lg border bg-stone-800 p-4 duration-300 hover:bg-stone-700"
+                  className="border-foreground/40 shadow-card md:max-w-auto shadow-foreground/25 mx-auto flex min-h-[150px] w-full max-w-sm cursor-pointer flex-col items-center rounded-lg border bg-stone-800 p-4 md:min-h-[220px] lg:min-h-[180px]"
                   initial={{
                     opacity: 0,
-                    y: 30,
                     scale: 0.8,
                   }}
                   whileInView={{
                     opacity: 1,
-                    y: 0,
                     scale: 1,
+                  }}
+                  whileHover={{
+                    backgroundColor: 'var(--color-stone-700)',
                   }}
                   transition={{
                     duration: 0.3,
@@ -95,7 +88,7 @@ export default function Skill({ skillData }: SkillProps) {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       ))}
     </section>
